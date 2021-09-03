@@ -1,0 +1,21 @@
+<h1>Aprendiendo Angular 2!</h1>
+
+<p>Primer tipo de bindeo: Trae una variable desde el component.ts hacia component.html</p>
+<span>Variable "title": </span><h4>{{title}}</h4>
+
+<p>Bindeo de doble vía. El input se bindea a la variable title de component.ts</p>
+<input type="text" [(ngModel)]=title>
+
+<br>
+<br>
+
+<p>Otro tipo de bindeo: trae una funcion desde TS hacia HTML</p>
+<input type="button" value="Saludar" (click)=sayHi()>
+
+<br>
+
+<p>También se puede bindear un atributo de un objecto. El objeto es un atributo de la clase component.ts. Ejemplo:</p>
+<span>Nombre del atributo "usuario": </span><h4>{{usuario.nombre}}</h4>
+
+<p>Y una vez más, hacemos el doble bindeo. Esta vez bindeamos el atributo del objeto</p>
+<input type="text" [(ngModel)]=usuario.nombre>
