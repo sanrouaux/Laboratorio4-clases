@@ -6,8 +6,10 @@ import { Injectable } from '@angular/core';
 export class UsuarioService {
 
   nombre:string;
+  clave:string;
 
   constructor() { 
     this.nombre = '';
+    this.clave = '';
   }
 }

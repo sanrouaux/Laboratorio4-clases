@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { UsuarioService } from '../servicios/usuario.service';
+import { UsuarioService } from '../../servicios/usuario.service';
 
 @Component({
   selector: 'app-login',
@@ -9,18 +9,19 @@ import { UsuarioService } from '../servicios/usuario.service';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private rutas:Router, private usuario:UsuarioService) { }
+  constructor(private rutas:Router, public usuario:UsuarioService) { 
+
+  }
 
   ngOnInit(): void {
   }
 
   siguiente() {
-    console.log("Siguiente");
-    this.usuario.nombre = 'Juan';
+    //this.usuario.nombre = 'Juan';
     var modelo = this;
     setTimeout(function() {
-      //Abre un hilo, por lo tanto no podemos usar this dentro de la función
-      //El this remitirá a otra instancia
+      //Abre un hilo, por lo tanto no podemos usar "this" dentro de la función
+      //El this remitirá a otra instancia de objecto
       modelo.rutas.navigate(['home']);
     }, 2000);
   }
